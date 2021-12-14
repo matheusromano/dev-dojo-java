@@ -1,0 +1,34 @@
+package javacore.N_polymorphism.test;
+
+import javacore.N_polymorphism.domain.Computer;
+import javacore.N_polymorphism.domain.Product;
+import javacore.N_polymorphism.domain.SmartPhone;
+import javacore.N_polymorphism.service.ReportService;
+
+public class ProductTest03 {
+    public static void main(String[] args) {
+
+        // this is a kind of polymorphism, a superclass been referenced to a subclass
+        Product p1 = new Computer("Intel i9", 3000);
+
+        System.out.println("Product 1");
+        System.out.println(p1.getName());
+        System.out.println(p1.getPrice());
+        System.out.println(p1.CalculateTax());
+
+        System.out.println("------------------------------------");
+
+        Product p2 = new SmartPhone("Poco X3", 1500);
+        System.out.println("Product 2");
+        System.out.println(p2.getName());
+        System.out.println(p2.getPrice());
+        System.out.println(p2.CalculateTax());
+
+        System.out.println("------------------------------------");
+
+        Computer computer = new Computer("Ryzen 9", 5000, 16);
+        ReportService.generateTaxReport(computer);
+
+
+    }
+}
